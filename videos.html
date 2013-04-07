@@ -11,6 +11,9 @@
 	<script src = "js/libs/underscore.js" type="text/javascript"></script>
 	<script src = "js/libs/backbone.js" type= "text/javascript"></script>
 	<script src = "js/libs/handlebars.js" type="text/javascript"></script>
+	
+	<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+	<script src="http://vjs.zencdn.net/c/video.js"></script>
 
 	<!--  Page JavaScript -->
 	<script src = "js/videoPlayer.js" type="text/javascript"></script>
@@ -18,15 +21,38 @@
 
 	<!-- Templates -->
 	<script type = "text/template" id = "PlayerView-template">
+		<h1>{{title}}</h1>
+		<div id = "videoInfo">
+			<p id = "summary">{{summary}}</p>
+			<p>Posted: {{date}}</p>
+		</div>
+		<div id = "player">
+			<video id="playerObj" class="video-js vjs-default-skin" controls
+			  preload="auto" width="640" height="400" poster={{thumbnail}}
+			  data-setup="{}">
+			  <source src={{video}} type='video/mp4'>
+			  <!--<source src="my_video.webm" type='video/webm'>-->
+			</video>
+		</div>
 		
 	</script>
 	
 	<script type = "text/template" id = "VideoView-template">
-		
+		<div class = "video" data-id = {{vid}}>
+			<div class = "vidThumbnail">
+				<img src = {{thumbnail}} />
+			</div>
+			<div class = "videoInfo">
+				<h2>{{title}}<span class = "runTime">| {{runTime}}</span></h2>
+				<p>Posted: {{date}}</p>
+				<p>{{summary}}</p>
+			</div>
+		</div>
 	</script>
 	
 	<script type = "text/template" id = "VideoAppView-template">
-		
+		<div id = "videoPlayer"></div>
+		<div id = "videoList"></div>
 	</script>
 
 </head>

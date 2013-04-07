@@ -1,0 +1,37 @@
+[{
+	"title": "Test Video 1",
+	"type": "Episode",
+	"video": "vids/vidTest1.mp4",
+	"thumbnail": "vids/thumbnails/vidTest1.jpg",
+	"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, dolor ac ultricies scelerisque, massa diam sollicitudin odio, eu tristique turpis odio ut odio. Aliquam convallis euismod purus sit amet porttitor. Nulla quis feugiat risus. Etiam blandit quam sit amet libero semper pretium. Nunc id turpis quis nibh tempus molestie ut non lectus. Nam rhoncus tincidunt sapien, id sollicitudin neque posuere laoreet.",
+	"runTime": "1:00",
+	"date": "2/3/13",
+	"vid": 0
+},{
+	"title": "Test Video 2",
+	"type": "Promo",
+	"video": "vids/vidTest2.mp4",
+	"thumbnail": "vids/thumbnails/vidTest2.jpg",
+	"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, dolor ac ultricies scelerisque, massa diam sollicitudin odio, eu tristique turpis odio ut odio. Aliquam convallis euismod purus sit amet porttitor. Nulla quis feugiat risus. Etiam blandit quam sit amet libero semper pretium. Nunc id turpis quis nibh tempus molestie ut non lectus. Nam rhoncus tincidunt sapien, id sollicitudin neque posuere laoreet.",
+	"runTime": "1:00",
+	"date": "2/3/13",
+	"vid": 1
+},{
+	"title": "Test Video 3",
+	"type": "Other",
+	"video": "vids/vidTest1.mp4",
+	"thumbnail": "vids/thumbnails/vidTest1.jpg",
+	"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, dolor ac ultricies scelerisque, massa diam sollicitudin odio, eu tristique turpis odio ut odio. Aliquam convallis euismod purus sit amet porttitor. Nulla quis feugiat risus. Etiam blandit quam sit amet libero semper pretium. Nunc id turpis quis nibh tempus molestie ut non lectus. Nam rhoncus tincidunt sapien, id sollicitudin neque posuere laoreet.",
+	"runTime": "1:00",
+	"date": "2/3/13",
+	"vid": 2
+},{
+	"title": "Test Video 4",
+	"type": "Promo",
+	"video": "vids/vidTest2.mp4",
+	"thumbnail": "vids/thumbnails/vidTest2.jpg",
+	"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, dolor ac ultricies scelerisque, massa diam sollicitudin odio, eu tristique turpis odio ut odio. Aliquam convallis euismod purus sit amet porttitor. Nulla quis feugiat risus. Etiam blandit quam sit amet libero semper pretium. Nunc id turpis quis nibh tempus molestie ut non lectus. Nam rhoncus tincidunt sapien, id sollicitudin neque posuere laoreet.",
+	"runTime": "1:00",
+	"date": "2/3/13",
+	"vid": 3
+}]

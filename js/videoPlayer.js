@@ -15,12 +15,12 @@
     /////-----  COLLECTIONS  -----/////
     
     window.Videos = Backbone.Collection.extend({
-        model: window.Character,
-        url: 'json/videos/json',
+        model: window.Video,
+        url: 'json/videos.json',
         
-        initialize: function () {
+        initialize : function() {
             this.fetch({
-                update: true
+                //update : true
             });
         }
     });
@@ -38,12 +38,21 @@
            initialize : function () {
                this.controller = this.options.controller;
                
-               this.controller.bind('change:current', this.render, this);
+               this.controller.bind('change:current', this.changeVideo, this);
            },
            
            render: function () {
-               $(this.el).append(this.template(this.model.toJSON()));
+               $(this.el).html(this.template(this.model.toJSON()));
                return this;
+           },
+           
+           changeVideo: function () {
+               var current = this.controller.get('current');
+               console.log(current)
+               var    model = this.collection.at(current);
+                   
+               this.model = model;
+               this.render();
            }
         });
         
@@ -63,6 +72,10 @@
         window.VideoAppView = Backbone.View.extend({
             template: Handlebars.compile($('#VideoAppView-template').html()),
             
+            events: {
+                'click .video' : 'selectVideo'  
+            },
+            
             initialize: function () {
                 this.controller = this.options.controller;
                 
@@ -74,16 +87,18 @@
                 var collection = this.collection, 
                     controller = this.controller,
                     view,
-                    model = collection.at(collection.models.legth-1);
-                
+                    model = collection.at(controller.get("current"))
                 $(this.el).html(this.template({}));
-                
-                view = new window.PlayerView({
-                    model: model,
-                    el: $('#videoPlayer'),
-                    controller: controller
-                })
-                
+                console.log(model, collection.at(collection.models.length-1))
+                if(model){
+                    view = new window.PlayerView({
+                        model: model,
+                        el: $('#videoPlayer'),
+                        collection: collection,
+                        controller: controller
+                    });
+                    view.render();
+                }
                 collection.each(function(video){
                     view = new window.VideoView({
                         model: video,
@@ -91,6 +106,14 @@
                         controller: controller
                     });
                     view.render();
+                });
+            },
+            
+            selectVideo: function(event) {
+                var id = $(event.currentTarget).data('id');
+                console.log(id)
+                this.controller.set({
+                    current: id
                 });
             }
         });
@@ -105,9 +128,16 @@
                     el: $('#videoApp'),
                     collection: window.videos,
                     controller: window.controller
-                })
-            }
-        })
+                });
+                this.appView.render();
+            },
+
+        });
+        
+        $(function() {
+            window.App = new App();
+            Backbone.history.start();
+        });
          
     });
 
